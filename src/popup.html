@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>rslash info</title>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen+Mono' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+
+        font-family: "Oxygen Mono";
+        font-size: 75%;
+      }
+      #main {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+        max-height: 600px;
+      }
+    </style>
+    <!--
+    <script src="popup.js"></script>
+    -->
+  </head>
+  <body>
+    <div id="main">
+   To use, just type r\ with a space afterwards,
+   then simply name a subreddit to navigate to.
+
+   If you find this extension useful, 
+   please donate via PayPal to
+
+   <b>donate@avigloz.net</b>
+   <i>Thanks for downloading and enjoy!</i>
+    </div>
+
+
+
+
+
+  </body>
+</html>
+
