@@ -1,16 +1,34 @@
-chrome.omnibox.onInputEntered.addListener(function (text) {
-    window.open("https://reddit.com/r/" +  text);
-});
+// Copyright 2020, Avi Glozman (avi@avigloz.net)
 
-chrome.experimental.omnibox.onInputChanged.addListener(function (text, suggest) {
+var isFirefox = typeof InstallTrigger !== 'undefined';
 
-        var suggestions = [];
+if (!isFirefox) {
+	chrome.omnibox.onInputEntered.addListener(function (text) {
+	    window.open("https://reddit.com/r/" +  text);
+	});
+	
+	chrome.omnibox.onInputChanged.addListener(function (text, suggest) {
+		var suggestions = [];
 
-        suggestions.push({ content: 'r/food', description: 'Food' });
-        suggestions.push({ content: 'r/art', description: 'Art' });
-        suggestions.push({ content: 'r/', description: 'Art' });
-        
-
-        suggest(suggestions);
-    
-});
+		suggestions.push({ content: 'r/food', description: 'Food' });
+		suggestions.push({ content: 'r/cats', description: 'Cats'});
+		suggestions.push({ content: 'r/art', description: 'Art' });
+			
+		suggest(suggestions);
+	});
+}
+else {
+	browser.omnibox.onInputEntered.addListener(function (text) {
+	    window.open("https://reddit.com/r/" +  text);
+	});
+	
+	browser.omnibox.onInputChanged.addListener(function (text, suggest) {
+		var suggestions = [];
+	
+		suggestions.push({ content: 'r/food', description: 'Food' });
+		suggestions.push({ content: 'r/cats', description: 'Cats'});
+		suggestions.push({ content: 'r/art', description: 'Art' });
+	
+		suggest(suggestions);
+	});
+}
