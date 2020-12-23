@@ -1,12 +1,20 @@
 body {
   font-family: "Oxygen Mono";
+  background-color: #363533;
+  color: white;
   font-size: 75%;
 }
 #main {
   /* avoid an excessively wide status text */
-  white-space: pre;
   text-overflow: ellipsis;
   overflow: hidden;
-  max-width: 400px;
+  max-width: 375px;
   max-height: 600px;
+}
+#donbox {
+	border: 2px solid #ff500f;
+	padding: 2px;
+}
+a {
+	color: orange;
 }

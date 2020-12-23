@@ -4,7 +4,9 @@ var isFirefox = typeof InstallTrigger !== 'undefined';
 
 if (!isFirefox) {
 	chrome.omnibox.onInputEntered.addListener(function (text) {
-	    window.open("https://reddit.com/r/" +  text);
+	    chrome.tabs.create({
+	    	url: "https://reddit.com/r/" + text
+	    })
 	});
 	
 	chrome.omnibox.onInputChanged.addListener(function (text, suggest) {
@@ -19,7 +21,9 @@ if (!isFirefox) {
 }
 else {
 	browser.omnibox.onInputEntered.addListener(function (text) {
-	    window.open("https://reddit.com/r/" +  text);
+	    browser.tabs.create({
+	    	url: "https://reddit.com/r/" + text
+	    })
 	});
 	
 	browser.omnibox.onInputChanged.addListener(function (text, suggest) {

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "rslash",
   "description": "Seamlessly integrating Reddit straight into the URL bar",
-  "version": "2020.12.22f",
+  "version": "2020.12.23.1",
   "omnibox": { "keyword" : "r\\"},
   "icons": {
   	"16": "icon16.png"
